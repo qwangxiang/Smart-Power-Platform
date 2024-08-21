@@ -118,7 +118,7 @@ class Room:
             other += self.process_device(device, start_time_stamp, end_time_stamp)
         print('Error List:', self.error_list)
         print('Empty List:', self.empty_list)
-        return ac_inner, ac_outter, other
+        return np.round(ac_inner,2), np.round(ac_outter,2), np.round(other,2)
 
     def area_count(self, start_time_stamp:int, end_time_stamp:int):
         '''
@@ -137,7 +137,7 @@ class Room:
         print('Error List:', self.error_list)
         print('Empty List:', self.empty_list)
         ratio = self.ratio_count()
-        return inner_ac*ratio, outter_ac*ratio, other*ratio
+        return np.round(inner_ac*ratio,2), np.round(outter_ac*ratio,2), np.round(other*ratio,2)
     
     def ratio_count(self):
         area_info = pd.read_excel('设备档案/Device_Info.xlsx', sheet_name='面积分摊')
@@ -167,7 +167,7 @@ class Room:
             other += self.process_device(i, start_time_stamp, end_time_stamp)
         print('Error List:', self.error_list)
         print('Empty List:', self.empty_list)
-        return inner_ac, outter_ac, other
+        return np.round(inner_ac,2), np.round(outter_ac,2), np.round(other,2)
     
     def ax_area_count(self, start_time_stamp:int, end_time_stamp:int):
         '''
@@ -175,7 +175,7 @@ class Room:
         '''
         inner_ac,outter_ac,other = self.ac_count(start_time_stamp, end_time_stamp)
         ratio = self.ratio_count()
-        return inner_ac*ratio, outter_ac*ratio, other*ratio
+        return np.round(inner_ac*ratio,2), np.round(outter_ac*ratio,2), np.round(other*ratio,2)
 
     def process_device(self, device:Device, start_time_stamp:int, end_time_stamp:int):
         '''
