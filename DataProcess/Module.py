@@ -341,7 +341,7 @@ class DataProcessor(object):
         return np.cumsum(data_diff)+data[0]
         pass
 
-@st.cache_data
+# @st.cache_data
 def GetRoomDataBetween(room_id, start_time:str, end_time:str, datatype:str='P', time_interval=15):
     '''
     读取房间在某个时间段的数据，时间格式：'2024-06-30 00:00:00'，返回数据时间格式是时间戳，已除1000
