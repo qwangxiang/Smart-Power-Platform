@@ -12,6 +12,6 @@ if __name__ == '__main__':
     if auth_status:
         if st.button('查询数据'):
             print('button clicked')
-            data = module.GetRoomDataBetween(username, '2024-06-30 00:00:00', '2024-07-01 00:00:00')
-            df = pd.DataFrame(data[0].reshape(-1,1))
-            st.write(df)
+            # data = module.GetRoomDataBetween(username, '2024-06-30 00:00:00', '2024-07-01 00:00:00')
+            # df = pd.DataFrame(data[0].reshape(-1,1))
+            # st.write(df)
