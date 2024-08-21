@@ -10,6 +10,7 @@ import pandas as pd
 if __name__ == '__main__':
     authenticator,name,auth_status,username = Login.Login()
     if auth_status:
-        data = module.GetRoomDataBetween(username, '2024-06-30 00:00:00', '2024-07-01 00:00:00')
-        df = pd.DataFrame(data[0].reshape(-1,1))
-        st.write(df)
+        if st.button('查询数据'):
+            data = module.GetRoomDataBetween(username, '2024-06-30 00:00:00', '2024-07-01 00:00:00')
+            df = pd.DataFrame(data[0].reshape(-1,1))
+            st.write(df)
