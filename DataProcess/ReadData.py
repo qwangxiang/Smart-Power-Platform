@@ -1,7 +1,9 @@
 import pandas as pd
 from iotdb.Session import Session
 import datetime
+import streamlit as st
 
+st.cache_resource
 def iotdbconnect(ip:str='202.120.60.3', port:str='6667'):
     '''
     连接到IOTDB数据库

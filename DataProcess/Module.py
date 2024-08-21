@@ -5,6 +5,7 @@ sys.path.append(os.getcwd())
 import pandas as pd
 from DataProcess import ReadData
 import numpy as np
+import streamlit as st
 
 class Device:
     def __init__(self, id:str) -> None:
@@ -340,6 +341,13 @@ class DataProcessor(object):
         return np.cumsum(data_diff)+data[0]
         pass
 
+@st.cache_data
+def GetRoomDataBetween(room_id, start_time:str, end_time:str, datatype:str='P', time_interval=15):
+    '''
+    读取房间在某个时间段的数据，时间格式：'2024-06-30 00:00:00'，返回数据时间格式是时间戳，已除1000
+    '''
+    room = Room(room_id)
+    return room.readDataBetween(start_time, end_time, datatype, time_interval)
 
 if __name__ == '__main__':
     # device = Device('Mt1-M1-a0764e56d490')
