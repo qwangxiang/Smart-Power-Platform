@@ -353,7 +353,8 @@ if __name__ == '__main__':
     # device = Device('Mt1-M1-a0764e56d490')
     # df = device.readDataBetween('2024-06-30 00:00:00', '2024-06-30 23:59:59')
 
-    room = Room('seiee1306413267')
-    print(room.readDataBetween('2024-06-30 00:00:00', '2024-06-30 23:59:59'))
+    room = Room('seiee1391313964')
+    room.show_info()
+    # print(room.readDataBetween('2024-06-30 00:00:00', '2024-06-30 23:59:59'))
 
 

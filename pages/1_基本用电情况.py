@@ -49,12 +49,13 @@ def power_basic():
 
 def power_heatmap():
     st.header('用电热力图')
+    st.write('**功能开发中...**')
     pass
 
 def energy_efficiency():
     st.header('能效分析')
+    st.write('**功能开发中...**')
     pass
-
 
 if __name__ == '__main__':
     authenticator,name,auth_status,username = Login.Login()
